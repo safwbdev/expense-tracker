@@ -15,7 +15,7 @@ import { v4 as uuidv4 } from "uuid";
 import {
   incomeCategories,
   expenseCategories,
-} from "../../../constsants/categories";
+} from "../../../constants/categories";
 import formatDate from "../../../utils/formatDate";
 const initialState = {
   amount: "",
