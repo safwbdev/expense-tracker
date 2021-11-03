@@ -11,7 +11,7 @@ const App = () => {
       container
       spacing={0}
       alignItems="center"
-      justify="center"
+      justifyContent="center"
       style={{ height: "100vh" }}
     >
       <Grid item xs={12} sm={4}>
