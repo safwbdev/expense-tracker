@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "./context/context";
+import { SpeechProvider } from "@speechly/react-client";
 
 ReactDOM.render(
-  <Provider>
-    <App />
-  </Provider>,
+  <SpeechProvider appId={process.env.REACT_APP_ID} language="en-US">
+    <Provider>
+      <App />
+    </Provider>
+  </SpeechProvider>,
   document.getElementById("root")
 );
 
