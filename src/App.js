@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from "react";
-import Details from "./Components/Details/Details";
+import Details from "./components/Details/Details";
+import Main from "./components/Main/Main";
 import { Grid } from "@material-ui/core";
-import useStyles from "./styles";
-import Main from "./Components/Main/Main";
 import {
   PushToTalkButton,
   PushToTalkButtonContainer,
   ErrorPanel,
 } from "@speechly/react-ui";
 import { SpeechState, useSpeechContext } from "@speechly/react-client";
+import useStyles from "./styles";
 
 const App = () => {
   const classes = useStyles();

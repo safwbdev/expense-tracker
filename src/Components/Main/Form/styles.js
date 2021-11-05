@@ -8,5 +8,8 @@ export default makeStyles(() => ({
   },
   button: {
     marginTop: "20px",
+    background: "#154731",
+    color: "#ffffff",
+    borderRadius: "30px",
   },
 }));

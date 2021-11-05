@@ -12,34 +12,43 @@ import List from "./List/List";
 import { ExpenseTrackerContext } from "../../context/context";
 import useStyles from "./styles";
 import InfoCard from "./InfoCard";
+import {
+  APP_TITLE,
+  APP_SUBTITLE,
+  TOTAL_BALANCE,
+} from "../../constants/lang_eng";
 
 const Main = () => {
   const classes = useStyles();
   const { balance } = useContext(ExpenseTrackerContext);
   return (
-    <Card className={classes.root}>
-      <CardHeader title="Expense Tracker" subheader="Powered by Speechly" />
-      <CardContent>
-        <Typography align="center" variant="h5">
-          Total Balance ${balance}
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          style={{ lineHeight: "1.5em", marginTop: "20px" }}
-        >
-          <InfoCard />
-        </Typography>
-        <Divider className={classes.divider} />
-        <Form />
-      </CardContent>
-      <CardContent className={classes.cardContent}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <List />
+    <>
+      <Card className={classes.root}>
+        <CardHeader title={APP_TITLE} subheader={APP_SUBTITLE} />
+        <CardContent>
+          <Typography align="center" variant="h5">
+            {`${TOTAL_BALANCE}${balance}`}
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            style={{ lineHeight: "1.5em", marginTop: "20px" }}
+          >
+            <InfoCard />
+          </Typography>
+          <Divider className={classes.divider} />
+          <Form />
+        </CardContent>
+      </Card>
+      <Card className={classes.list}>
+        <CardContent className={classes.cardContent}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <List />
+            </Grid>
           </Grid>
-        </Grid>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </>
   );
 };
 

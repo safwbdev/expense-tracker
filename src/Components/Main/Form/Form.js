@@ -19,6 +19,15 @@ import {
 import formatDate from "../../../utils/formatDate";
 import { useSpeechContext } from "@speechly/react-client";
 import Snackbar from "../../Snackbar/Snackbar";
+import {
+  FORM_TYPE,
+  FORM_CATEGORY,
+  FORM_AMOUNT,
+  FORM_DATE,
+  FORM_INCOME,
+  FORM_EXPENSE,
+  FORM_CREATE,
+} from "../../../constants/lang_eng";
 
 const initialState = {
   amount: "",
@@ -115,19 +124,19 @@ const Form = () => {
       </Grid>
       <Grid item xs={6}>
         <FormControl fullWidth>
-          <InputLabel>Type</InputLabel>
+          <InputLabel>{FORM_TYPE}</InputLabel>
           <Select
             value={formData.type}
             onChange={(e) => setFormData({ ...formData, type: e.target.value })}
           >
-            <MenuItem value="Income">Income</MenuItem>
-            <MenuItem value="Expense">Expense</MenuItem>
+            <MenuItem value="Income">{FORM_INCOME}</MenuItem>
+            <MenuItem value="Expense">{FORM_EXPENSE}</MenuItem>
           </Select>
         </FormControl>
       </Grid>
       <Grid item xs={6}>
         <FormControl fullWidth>
-          <InputLabel>Category</InputLabel>
+          <InputLabel>{FORM_CATEGORY}</InputLabel>
           <Select
             value={formData.category}
             onChange={(e) =>
@@ -145,7 +154,7 @@ const Form = () => {
       <Grid item xs={6}>
         <TextField
           type="number"
-          label="Amount"
+          label={FORM_AMOUNT}
           fullWidth
           value={formData.amount}
           onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
@@ -154,7 +163,7 @@ const Form = () => {
       <Grid item xs={6}>
         <TextField
           type="date"
-          label="Date"
+          label={FORM_DATE}
           fullWidth
           value={formData.date}
           onChange={(e) =>
@@ -164,12 +173,12 @@ const Form = () => {
       </Grid>
       <Button
         className={classes.button}
-        variant="outlined"
+        variant="contained"
         color="primary"
         fullWidth
         onClick={createTransaction}
       >
-        Create
+        {FORM_CREATE}
       </Button>
     </Grid>
   );
