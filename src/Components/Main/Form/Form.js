@@ -86,6 +86,8 @@ const Form = () => {
           case "date":
             setFormData({ ...formData, date: e.value });
             break;
+          default:
+            break;
         }
       });
       if (
