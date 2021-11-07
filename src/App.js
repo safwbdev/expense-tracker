@@ -16,6 +16,10 @@ const App = () => {
   const classes = useStyles();
   const { speechState } = useSpeechContext();
   const main = useRef(null);
+  const incomeRef = useRef(null);
+  const expenseRef = useRef(null);
+  const executeScrollToIncome = () => incomeRef.current.scrollIntoView();
+  const executeScrollToExpense = () => expenseRef.current.scrollIntoView();
   const executeScroll = () => main.current.scrollIntoView();
   useEffect(() => {
     if (speechState === SpeechState.Recording) {
@@ -40,10 +44,10 @@ const App = () => {
         <Grid item xs={12} sm={3} className={classes.main} ref={main}>
           <Main />
         </Grid>
-        <Grid item xs={12} sm={4} className={classes.desktop}>
+        <Grid item xs={12} sm={4} className={classes.desktop} ref={incomeRef}>
           <Details title="Income" />
         </Grid>
-        <Grid item xs={12} sm={4} className={classes.last}>
+        <Grid item xs={12} sm={4} className={classes.last} ref={expenseRef}>
           <Details title="Expense" />
         </Grid>
       </Grid>
@@ -51,7 +55,10 @@ const App = () => {
         <PushToTalkButton />
         <ErrorPanel />
       </PushToTalkButtonContainer>
-      <BottomNav />
+      <BottomNav
+        executeScrollToIncome={executeScrollToIncome}
+        executeScrollToExpense={executeScrollToExpense}
+      />
     </>
   );
 };

@@ -5,20 +5,20 @@ import {
   Avatar,
 } from "@material-ui/core";
 
-import {
-  MoneyOff,
-  AttachMoney,
-  // AccountBalance
-} from "@material-ui/icons";
+import { MoneyOff, AttachMoney } from "@material-ui/icons";
 import useStyles from "./styles";
 
-export default function SimpleBottomNavigation() {
+const SimpleBottomNavigation = ({
+  executeScrollToIncome,
+  executeScrollToExpense,
+}) => {
   const classes = useStyles();
 
   return (
     <BottomNavigation showLabels className={classes.root}>
       <BottomNavigationAction
         label="Income"
+        onClick={executeScrollToIncome}
         icon={
           <Avatar className={classes.avatarIncome}>
             <AttachMoney />
@@ -26,16 +26,10 @@ export default function SimpleBottomNavigation() {
         }
       />
 
-      <BottomNavigationAction
-      // label="Balance"
-      // icon={
-      //   <Avatar>
-      //     <AccountBalance />
-      //   </Avatar>
-      // }
-      />
+      <BottomNavigationAction />
       <BottomNavigationAction
         label="Expenses"
+        onClick={executeScrollToExpense}
         icon={
           <Avatar className={classes.avatarExpense}>
             <MoneyOff />
@@ -44,4 +38,5 @@ export default function SimpleBottomNavigation() {
       />
     </BottomNavigation>
   );
-}
+};
+export default SimpleBottomNavigation;
