@@ -13,12 +13,14 @@ const InfoCard = () => {
     <div atyle={{ textAlign: "center", padding: "0 10px" }}>
       {INFO_CARD_TRY}
       <br />
-      {INFO_CARD_ADD} {isIncome ? "Income" : "Expense"}
-      {INFO_CARD_FOR}
-      {isIncome ? "$100" : "$50"} {INFO_CARD_IN}{" "}
-      {isIncome ? "Business" : "House"}
-      {INFO_CARD_FOR}
-      {isIncome ? "Monday" : "Tuesday"}
+      <span style={{ fontStyle: "italic", fontWeight: "bold" }}>
+        "{INFO_CARD_ADD} {isIncome ? "Income" : "Expense"}
+        {INFO_CARD_FOR}
+        {isIncome ? "$100" : "$50"} {INFO_CARD_IN}{" "}
+        {isIncome ? "Business" : "House"}
+        {INFO_CARD_FOR}
+        {isIncome ? "Monday" : "Tuesday"}""
+      </span>
     </div>
   );
 };

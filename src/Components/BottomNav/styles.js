@@ -1,7 +1,17 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core";
 import { red, green } from "@material-ui/core/colors";
 
 export default makeStyles((theme) => ({
+  root: {
+    display: "none",
+    position: "fixed",
+    bottom: "0",
+    padding: "5px 0",
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+    },
+  },
   avatarIncome: {
     color: "#fff",
     backgroundColor: green[500],
@@ -9,14 +19,5 @@ export default makeStyles((theme) => ({
   avatarExpense: {
     color: theme.palette.getContrastText(red[500]),
     backgroundColor: red[500],
-  },
-  list: {
-    maxHeight: "230px",
-    overflow: "auto",
-  },
-  listItem: {
-    background: "#efefef",
-    borderRadius: "20px",
-    marginBottom: "10px",
   },
 }));

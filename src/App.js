@@ -9,6 +9,8 @@ import {
 } from "@speechly/react-ui";
 import { SpeechState, useSpeechContext } from "@speechly/react-client";
 import useStyles from "./styles";
+import CustomAppBar from "./components/Appbar/Appbar";
+import BottomNav from "./components/BottomNav/BottomNav";
 
 const App = () => {
   const classes = useStyles();
@@ -22,7 +24,8 @@ const App = () => {
   }, [speechState]);
 
   return (
-    <div>
+    <>
+      <CustomAppBar />
       <Grid
         className={classes.grid}
         container
@@ -48,7 +51,8 @@ const App = () => {
         <PushToTalkButton />
         <ErrorPanel />
       </PushToTalkButtonContainer>
-    </div>
+      <BottomNav />
+    </>
   );
 };
 

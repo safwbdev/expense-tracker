@@ -123,7 +123,7 @@ const Form = () => {
         </Typography>
       </Grid>
       <Grid item xs={6}>
-        <FormControl fullWidth>
+        <FormControl variant="outlined" fullWidth>
           <InputLabel>{FORM_TYPE}</InputLabel>
           <Select
             value={formData.type}
@@ -135,7 +135,7 @@ const Form = () => {
         </FormControl>
       </Grid>
       <Grid item xs={6}>
-        <FormControl fullWidth>
+        <FormControl variant="outlined" fullWidth>
           <InputLabel>{FORM_CATEGORY}</InputLabel>
           <Select
             value={formData.category}
@@ -156,6 +156,7 @@ const Form = () => {
           type="number"
           label={FORM_AMOUNT}
           fullWidth
+          variant="outlined"
           value={formData.amount}
           onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
         />
@@ -165,6 +166,7 @@ const Form = () => {
           type="date"
           label={FORM_DATE}
           fullWidth
+          variant="outlined"
           value={formData.date}
           onChange={(e) =>
             setFormData({ ...formData, date: formatDate(e.target.value) })

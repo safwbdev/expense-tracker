@@ -1,13 +1,13 @@
 // MAIN
 export const APP_TITLE = "Expen$e Tracker";
 export const APP_SUBTITLE = "Powered by Speechly";
-export const TOTAL_BALANCE = "Total Balance $";
+export const TOTAL_BALANCE = "Total Balance";
 
 // SNACKBAR
 export const SNACKBAR_TEXT = "Transaction successfully created.";
 
 // INFO CARD
-export const INFO_CARD_TRY = "Try saying:";
+export const INFO_CARD_TRY = "Press the record button and try saying:";
 export const INFO_CARD_ADD = "Add";
 export const INFO_CARD_FOR = " for ";
 export const INFO_CARD_IN = "in Category";
