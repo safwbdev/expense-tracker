@@ -5,18 +5,13 @@ import {
   CardHeader,
   Divider,
   Grid,
-  Typography,
 } from "@material-ui/core";
 import Form from "./Form/Form";
 import List from "./List/List";
 import { ExpenseTrackerContext } from "../../context/context";
 import useStyles from "./styles";
 import InfoCard from "./InfoCard";
-import {
-  // APP_TITLE,
-  // APP_SUBTITLE,
-  TOTAL_BALANCE,
-} from "../../constants/lang_eng";
+import { TOTAL_BALANCE } from "../../constants/lang_eng";
 
 const Main = () => {
   const classes = useStyles();
@@ -31,13 +26,13 @@ const Main = () => {
         />
         <Card className={classes.innerCard}>
           <CardContent>
-            <Typography
+            {/* <Typography
               variant="body2"
               align="center"
               style={{ lineHeight: "1.5em", marginTop: "20px" }}
-            >
-              <InfoCard />
-            </Typography>
+            > */}
+            <InfoCard />
+            {/* </Typography> */}
             <Divider className={classes.divider} />
             <Form />
           </CardContent>

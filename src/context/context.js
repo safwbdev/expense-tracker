@@ -1,7 +1,10 @@
 import React, { useReducer, createContext } from "react";
 import contextReducer from "./contextReducer";
+import { dummyData } from "../constants/data";
+import { ADD_TRANSACTION, DELETE_TRANSACTION } from "../constants/actions";
 
-const initialState = JSON.parse(localStorage.getItem("transactions")) || [];
+const initialState =
+  JSON.parse(localStorage.getItem("transactions")) || dummyData;
 
 export const ExpenseTrackerContext = createContext(initialState);
 
@@ -9,10 +12,10 @@ export const Provider = ({ children }) => {
   const [transactions, dispatch] = useReducer(contextReducer, initialState);
 
   const deleteTransaction = (id) => {
-    dispatch({ type: "DELETE_TRANSACTION", payload: id });
+    dispatch({ type: DELETE_TRANSACTION, payload: id });
   };
   const addTransaction = (transaction) => {
-    dispatch({ type: "ADD_TRANSACTION", payload: transaction });
+    dispatch({ type: ADD_TRANSACTION, payload: transaction });
   };
   const balance = transactions.reduce((acc, currVal) => {
     return currVal === "Expense" ? acc - currVal.amount : acc + currVal.amount;

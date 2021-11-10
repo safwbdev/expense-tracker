@@ -1,4 +1,5 @@
 import React from "react";
+import { Typography } from "@material-ui/core";
 import {
   INFO_CARD_TRY,
   INFO_CARD_ADD,
@@ -10,7 +11,11 @@ const isIncome = Math.round(Math.random());
 
 const InfoCard = () => {
   return (
-    <div atyle={{ textAlign: "center", padding: "0 10px" }}>
+    <Typography
+      variant="body2"
+      align="center"
+      style={{ lineHeight: "1.5em", marginTop: "20px" }}
+    >
       {INFO_CARD_TRY}
       <br />
       <span style={{ fontStyle: "italic", fontWeight: "bold" }}>
@@ -21,7 +26,7 @@ const InfoCard = () => {
         {INFO_CARD_FOR}
         {isIncome ? "Monday" : "Tuesday"}""
       </span>
-    </div>
+    </Typography>
   );
 };
 
